@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to the University Database with over 1000 worldwide Universities!</h1>
+
+        <h2>Here we can help you find your perfect university</h2>
+            <p>Which country would you like to look at the universities for?</p>
+            <form action="/university/data" method="POST">
+                <select name= country method="GET" action="/">
+                    {% for item in universities %}
+            <option value= "{{item}}" SELECTED>{{item}}</option>"
+            {% endfor %}
+                <input type="Submit" value="Select Country">
+<p></p>
+                </select>
+        </form>
+<br>
+<br>
+        <p>Maybe you need help picking a university.</p>
+        <p>Here you can pick some criteria and what rank they should be, and we will predict your perfect university.</p>
+
+
+    <form action="/university/qualities" method="POST">
+                <select name= stat1 method="GET" action="/">
+                    {% for item in qualities %}
+            <option value= "{{item}}" SELECTED>{{item}}</option>"
+            {% endfor %}
+                    <input id="stat_value1" type="number" name="stat_value1" value="1" min="1">
+<br>
+            <select name= stat2 method="GET" action="/">
+                    {% for item in qualities %}
+            <option value= "{{item}}" SELECTED>{{item}}</option>"
+            {% endfor %}
+
+                    <input id="stat_value2" type="number" name="stat_value2" value="1" min="1">
+        <br>
+                <br>
+                    <input type="Submit" value="Find a university">
+                    </form>
+
+</body>
+</html>

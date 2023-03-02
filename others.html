@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Here is the list of the other countries.</h1>
+        {% for item in list %}
+        <tr>
+            <td>{{item}}</td>
+            <br>
+        </tr>
+        {% endfor %}
+        <br>
+        <p>You can see what percentage the universities in these countries make up.</p>
+
+        <img src="{{ url_for('request_pie_chart') }}">
+
+        <p>Or you can go check out another country.</p>
+        <form action="/university/others" method="POST">
+            <input type="submit" value="Go back to home">
+        </form>
+    </body>
+</html>

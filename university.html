@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Here are the university statistics for {{ country }}</h1>
+        <p>You can see the scores of universities, or even what percentage the universities in {{country}} make up.</p>
+        <img src="{{ url_for('request_plots') }}">
+        <p>Or you can go check out another country.</p>
+        <form action="/university/<country>" method="POST">
+            <input type="submit" value="Go back to home">
+        </form>
+    </body>
+</html>
